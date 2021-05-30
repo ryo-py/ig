@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangogirls',
-        'USER': 'name',
+        'NAME': 'IdeaGenerator',
+        'USER': 'ryo',
         'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': 'database-2.cy0xz0smklpn.ap-northeast-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -153,9 +153,9 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
-AWS_ACCESS_KEY_ID = 'AKIAWK4K7TCQ2Q737TJM'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'grippy-ig-0301'
+AWS_ACCESS_KEY_ID = 'AKIA44BCLHSTRFAPTGBC'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'ig-django'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
