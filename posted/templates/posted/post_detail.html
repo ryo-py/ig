@@ -1,0 +1,174 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block body %}
+    <!-- Page Preloder -->
+
+    <!-- Header Section Begin -->
+    {% include 'templates/header.html' %}
+
+    <!-- Header Section End -->
+
+    <!-- Listing Section Begin -->
+    <section class="listing-hero set-bg" data-setbg="{% static 'img/listing/details/listing-hero.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="listing__hero__btns">
+                        <a href="#" class="primary-btn share-btn"><i class="fa fa-mail-reply"></i> Share</a>
+                        <a href="#" class="primary-btn"><i class="fa fa-bookmark"></i> Bookmark</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Listing Section End -->
+    
+
+    <!-- Listing Details Section Begin -->
+    <section class="listing-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="listing__details__text">
+                        <div class="listing__details__about">
+                            <h4>{{ post.title }}</h4>
+                            <p>{{ post.content }}</p>
+                            
+                        </div>
+                        
+                        
+                        <div class="listing__details__review mb-3">
+                        <p class="mb-2">{{ post.comment_count }}件のコメント</p>
+                        {% if request.user.is_authenticated %}
+                            {% comment %} <h4>コメント</h4> {% endcomment %}
+                            <form  method="POST" action="">  
+                                {% csrf_token %}  
+                                {{ form }}                           
+                                <button type="submit" class="site-btn">コメント</button>
+                            </form>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="listing__details__comment">
+                            {% comment %} <h4>Comment</h4> {% endcomment %}
+                            {% for comment in post.get_comments %}
+                            <div class="listing__details__comment__item">
+                                <div class="listing__details__comment__item__pic">
+                                    <img src="{{ user.profile.image.url }}" alt="">
+                                </div>
+                                
+                                <div class="listing__details__comment__item__text">
+                                    <div class="listing__details__comment__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                       <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>{{ comment.timestamp|timesince }}前 </span>
+                                    <h5>{{ comment.user.username }}</h5>
+                                    <p>{{comment.content}}</p>
+                                    <ul>
+                                                            
+                                        <li><i class="fa fa-hand-o-right"></i> Like</li>
+                                        <li><i class="fa fa-share-square-o"></i> Reply</li>                                                               
+                                        <li><a href="{% url 'posted:comment_delete' pk=comment.pk %}" type="submit" class="fa fa-share-square-o"></a> Delete</li>
+                        
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog__sidebar__categories">
+                            <h5>Categories</h5>
+                            <ul>
+                                <li><a href="#">テクノロジー <span>18</span></a></li>
+                                <li><a href="#">農業 <span>20</span></a></li>
+                                <li><a href="#">web <span>07</span></a></li>
+                                <li><a href="#">AI <span>22</span></a></li>
+                                <li><a href="#">宗教 <span>19</span></a></li>
+                                <li><a href="#">五感 <span>19</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="blog__sidebar__tags">
+                            <h5>Popular Tag</h5>
+                            <a href="#">Business</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">Payment</a>
+                            <a href="#">Travel</a>
+                            <a href="#">Finance</a>
+                            <a href="#">Videos</a>
+                            <a href="#">Ideas</a>
+                            <a href="#">Unique</a>
+                            <a href="#">Music</a>
+                            <a href="#">Key</a>
+                        </div>
+                        <div class="blog__sidebar__recent">
+                            <h5>Idea Ranking</h5>
+                            <a href="#" class="blog__sidebar__recent__item">
+                                <div class="blog__sidebar__recent__item__pic">
+                                    <img src="{% static 'img/blog/recent-1.jpg' %}" alt="">
+                                </div>
+                                <div class="blog__sidebar__recent__item__text">
+                                    <span><i class="fa fa-tags"></i> Shopping</span>
+                                    <h6>Tortoise grilled on salt</h6>
+                                    <p><i class="fa fa-clock-o"></i> 19th March, 2019</p>
+                                </div>
+                            </a>
+                            <a href="#" class="blog__sidebar__recent__item">
+                                <div class="blog__sidebar__recent__item__pic">
+                                    <img src="{% static 'img/blog/recent-2.jpg' %}" alt="">
+                                </div>
+                                <div class="blog__sidebar__recent__item__text">
+                                    <span><i class="fa fa-tags"></i> Hotels</span>
+                                    <h6>Shrimp floured and fried</h6>
+                                    <p><i class="fa fa-clock-o"></i> 22th March, 2019</p>
+                                </div>
+                            </a>
+                            <a href="#" class="blog__sidebar__recent__item">
+                                <div class="blog__sidebar__recent__item__pic">
+                                    <img src="{% static 'img/blog/recent-3.jpg' %}" alt="">
+                                </div>
+                                <div class="blog__sidebar__recent__item__text">
+                                    <span><i class="fa fa-tags"></i> Restaurant</span>
+                                    <h6>Sweet and sour pork ribs</h6>
+                                    <p><i class="fa fa-clock-o"></i> 25th March, 2019</p>
+                                </div>
+                            </a>
+                            <a href="#" class="blog__sidebar__recent__item">
+                                <div class="blog__sidebar__recent__item__pic">
+                                    <img src="{% static 'img/blog/recent-4.jpg' %}" alt="">
+                                </div>
+                                <div class="blog__sidebar__recent__item__text">
+                                    <span><i class="fa fa-tags"></i> Videos</span>
+                                    <h6>Crab fried with tamarind</h6>
+                                    <p><i class="fa fa-clock-o"></i> 19th March, 2019</p>
+                                </div>
+                            </a>
+                            <a href="#" class="blog__sidebar__recent__item">
+                                <div class="blog__sidebar__recent__item__pic">
+                                    <img src="{% static 'img/blog/recent-5.jpg' %}" alt="">
+                                </div>
+                                <div class="blog__sidebar__recent__item__text">
+                                    <span><i class="fa fa-tags"></i> Travel</span>
+                                    <h6>Tortoise grilled on salt</h6>
+                                    <p><i class="fa fa-clock-o"></i> 19th March, 2019</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Listing Details Section End -->
+{% endblock body %}

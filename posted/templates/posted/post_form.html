@@ -1,0 +1,273 @@
+{% extends 'templates/noimg_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<body>
+{% block body %}
+    <section class="ig_categories">
+        <div class="ig_container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                    <h2>Idea Generated!</h2>
+                    <p>アイデアを生成しました。沢山のアイデアを考えましょう！</p>
+                    </div>
+                    <div class="categories__item__list">
+                        {% if text0 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">
+                                <div>
+                                    <span>1つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_0 }}</p>
+                                        <p class="idea2">{{ idea2_0 }}</p>
+                                        <p class="idea3">{{ idea3_0 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text0 }}</h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text1 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>2つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_1 }}</p>
+                                        <p class="idea2">{{ idea2_1 }}</p>
+                                        <p class="idea3">{{ idea3_1 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text1 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text2 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>3つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_2 }}</p>
+                                        <p class="idea2">{{ idea2_2 }}</p>
+                                        <p class="idea3">{{ idea3_2 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text2 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text3 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>4つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_3 }}</p>
+                                        <p class="idea2">{{ idea2_3 }}</p>
+                                        <p class="idea3">{{ idea3_3 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text3 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text4 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>5つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_4 }}</p>
+                                        <p class="idea2">{{ idea2_4 }}</p>
+                                        <p class="idea3">{{ idea3_4 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text4 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text5 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>6つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_5 }}</p>
+                                        <p class="idea2">{{ idea2_5 }}</p>
+                                        <p class="idea3">{{ idea3_5 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text5 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text6 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>7つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_6 }}</p>
+                                        <p class="idea2">{{ idea2_6 }}</p>
+                                        <p class="idea3">{{ idea3_6 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text6 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text7 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>8つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_7 }}</p>
+                                        <p class="idea2">{{ idea2_7 }}</p>
+                                        <p class="idea3">{{ idea3_7 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text7 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text8 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>9つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_8 }}</p>
+                                        <p class="idea2">{{ idea2_8 }}</p>
+                                        <p class="idea3">{{ idea3_8 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text8 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                        {% if text9 %}
+                        <a href="#form">
+                            <button type="button" class="idea_generated">                        
+                                <div>
+                                    <span>10つ目のアイデア</span>
+                                    <div class="display_none">
+                                        <p class="idea1">{{ idea1_9 }}</p>
+                                        <p class="idea2">{{ idea2_9 }}</p>
+                                        <p class="idea3">{{ idea3_9 }}</p>
+                                        <p class="category_ja1">{{ category1 }}</p>
+                                        <p class="category_ja2">{{ category2 }}</p>
+                                        <p class="category_ja3">{{ category3 }}</p>
+                                    </div>
+                                    <h5>{{ text9 }} </h5>
+                                </div>
+                            </button>
+                        </a>
+                        {% endif %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="ig_work">
+        <div class="section-title margin0">
+            <h2>Create New Idea</h2>
+            <p>考えたアイデアをメモしましょう！</p>
+        </div>
+        <div class="form_container">
+            <form id="form" method="post" action="" novalidate>
+                {% csrf_token %}
+                <p><span>アイデアカテゴリー</span></p>
+                <div style="text-align: center" class="container idea_category">
+                    <div class="row">
+                        <div id="category1" class="col-md-4">
+                            <p></p>
+                        </div>
+                        <div id="category2" class="col-md-4">
+                            <p></p>
+                        </div>
+                        <div id="category3" class="col-md-4">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row display_none">
+                    <div class="form-group col-md-4 mb-0">
+                        {{ form.category | as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-4 mb-0">
+                        {{ form.category | as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-4 mb-0">
+                        {{ form.category | as_crispy_field }}
+                    </div>
+                </div>
+                <p><span>アイデア要素</span></p>
+                <div class="idea_tag">
+                    <div id="tag" class="">
+                        <span>Please select idea from above </span>
+                        <h5>上のアイデアから選択してください</h5>
+                    </div>
+                </div>
+                <div class="form-row display_none">
+                    <div id="tag1" class="form-group col-md-4 mb-0">
+                        {{ form.tags | as_crispy_field }}
+                    </div>
+                </div>
+                <p><span>アイデア</span></p>
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-0">
+                        {{ form.title | as_crispy_field }}
+                    </div>
+                </div>
+                <p><span>アイデア概要</span></p>            
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-0">
+                        {{ form.content | as_crispy_field }}
+                    </div>
+                    {% if user.is_authenticated %}
+                    <button type="submit" class="btn btn-primary">アイデアを投稿</button>
+                    {% else %}
+                    <div class="section-title margin0" style="width: 100%">
+                        <span>投稿するにはログインしてください</span>
+                        <a href="{% url 'login' %}" class="btn btn-outline-dark">ログイン</a>            
+                    </div>
+                    {% endif %}
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+{% endblock body %}
+</body>

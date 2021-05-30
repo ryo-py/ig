@@ -1,0 +1,365 @@
+
+body{
+    padding: 0;
+}
+
+p {
+    font-weight: bold;
+    font-size: 20px;
+}
+.margin0 {
+    margin: 0 !important;
+}
+
+.display_none {
+    display: none;
+}
+
+input[type=radio] {
+    display: none;
+}
+.close{
+    display: none !important;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+
+}
+
+/* login.html */
+
+.login_container {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0px;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+/* noimg_header */
+
+.noimg_header {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.noimg_header .header__menu ul li a {
+    color: #323232;
+}
+
+/* index.html */
+
+.title {
+    margin: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.category {
+    padding-bottom: 250px;
+}
+
+.category_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.category .item {
+    flex-basis: 33.3%;
+    margin: 0;
+    padding: 2% 3%;
+    border: 1px solid #cacaca;
+}
+
+.big_category {
+    display: block;
+    height: 60px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.category_dropdown {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 380px;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.small_category {
+    font-size: 13px;
+    max-width: 200px;
+    min-width: 100px;
+    margin: 0 auto;
+    padding: 0.65rem 0.55rem;
+}   
+
+.generator_container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.item li {
+    list-style-type: none;
+}
+
+#ig {
+    background-color: white !important;
+}
+
+.footer {
+    z-index: 1000;
+    position: fixed; /* フッターを固定する */
+    bottom: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* フッターの横幅を指定する */
+    height: 165px; /* フッターの高さを指定する */
+    padding-top: 10px !important; /* フッター内側の余白を指定する(上下左右) */
+    background-color: #fff; /* フッターの背景色を指定する */
+    color: #000; /* フッターのフォントの色を指定する */
+    border-top: 1px solid #000;
+}
+
+#choice {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.generator_container {
+    height: 90px;
+}
+
+.generator_container .item {
+    width:200px;
+}
+
+.item p {
+    text-align: center;
+    line-height: 90px;
+}
+
+.clear,
+.submit {
+    font-size: 13px;
+    width: 100%;
+    min-width: 100px;
+    margin: 2px 0;
+    max-width: 240px;
+    font-weight: bold;
+    display: block;
+}
+
+.idea_generated{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+.idea_generated p{
+    font-size: 30px;
+}
+
+.idea_category {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-right: 16px;
+    -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.idea_tag {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-right: 16px;
+    -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+/* index.html */
+
+.tab-pane .item {
+    width: 50%;
+}
+
+.category_lists {
+    padding: 0;
+    margin: 0;
+}
+
+.category_lists li {
+    flex-basis: 33.3%;
+}
+
+.number p {
+    line-height: 30px;
+}
+
+.work {
+    padding-bottom: 20px !important;
+}
+
+.most-search {
+    padding-bottom: 200px !important;
+}
+
+
+
+/* post_list.html */
+
+.blog_item_widget {
+    display: block !important;
+}
+
+/* post_form.html */
+.ig_categories {
+    padding-top: 0;
+    padding-bottom: 0px;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.ig_container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.idea_generated {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-right: 16px;
+    -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.form-group label{
+    display: none !important;
+}
+
+.idea_generated span,
+form span {
+    font-size: 14px;
+    color: #707070;
+    display: block;
+    font-weight: 600;
+}
+
+.ig_work {
+    padding-bottom: 70px;
+    padding-top: 30px;
+
+}
+
+.form_container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+
+/* post_list.html  */
+
+.page_now {
+    font-size: 15px;
+    font-weight: bold;
+    color: #707070;
+    display: inline-block;
+    padding: 12px 20px 10px;
+    border: 1px solid #e4e4e4;
+    margin-right: -5px;
+    -webkit-transition: all, 0.3s;
+    transition: all, 0.3s;
+}
+
+/* profile.html */
+
+.page_container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mypage_container {
+    width: 100%;
+    float: left;
+    margin-right: 16px;
+    -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.profile_container {
+    width: 95%;
+    margin: 0 auto 30px;
+    padding: 20px;
+}
+
+.img_container {
+    text-align: left;
+}
+
+.img_container img{
+    width:180px;
+	height:180px;
+	object-fit:cover;
+	border-radius:50%;
+}
+
+.btn-container {
+    margin-top: 60px;
+}
+
+/* header.html */
+
+.header__menu ul li a {
+    font-size: 13px !important;
+    color: #777777 !important;
+    font-weight: 80;
+}
+/* 
+.ig_nav { 
+    /* width: 100%; */
+    height: 40px;
+    /* padding-left: ; */
+    padding-top: 2px;
+    background-color: white;
+    border-radius: 20px;
+    /* margin-right: auto; */
+    /* margin-left:auto; */
+    text-align: center;
+} */

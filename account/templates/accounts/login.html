@@ -1,0 +1,50 @@
+{% extends "templates/noimg_base.html" %}
+{% load static %}
+
+{% block body %}
+
+<section class="login_container">
+
+    <div class="content-section">
+        <div class="card text-center mx-auto mt-5" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-0">ログイン</h5>
+
+                <form method="POST" action="">
+                {% csrf_token %}
+
+                    <p class="card-text">
+                        
+                        <br>
+                        <div class="mb-3">       
+                            <h6 class="mb-3">{{ form.username.label }}<h6>
+                            {{ form.username }}
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="mb-3">パスワード</h6>
+                            {{ form.password }}
+                        </div>
+
+                        <div class="mb-4">
+                            {% for mess in messages %}
+                            <p>{{ mess }}</p>
+                            {% endfor %}
+                        </div>
+                       
+             
+                    </p>
+                    <button class="btn btn-outline-primary" type="submit">ログイン</button>
+                    <div class="border-top mt-4">
+                        <small class="text-muted">
+                            アカウントの作成<a class="ml-2" href="{% url 'register' %}">サインアップ</a>
+                        </small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock body %}

@@ -1,0 +1,121 @@
+
+{% extends 'templates/noimg_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<body>
+{% block body %}
+    <section class="ig_categories">
+        <div class="page_container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                    </div>
+                    <div class="mypage_container">
+                      <div class="container profile_container">
+                        <div class="row">
+                          <div class="col-md-5 img_container">
+                            <img src="{{ user.profile.image.url }}" class="card-img-top" alt="...">                          
+                          </div>
+                          <div class="col-md-7 info_conrainer">
+                              <p class="card-title">名前: {{ user.username }}</p>
+                              <br>
+                              <p class="card-text">メール: {{ user.email }}</p>
+                              <div class="container btn-container">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <a href="{% url 'profile_update' %}" class="btn btn-outline-danger">更新</a>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <a href="{% url 'logout' %}" class="btn btn-outline-dark">ログアウト</a>
+                                      </div>
+                                    </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <section class="blog-section">
+                        <div class="section-title">
+                          <h3>My Idea</h3>
+                          <p>アイデア一覧</p>
+                        </div>
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="row">
+                                      {% for post in page_obj %}
+                                          <div class="col-lg-4 col-md-6">
+                                              <div class="blog__item">
+                                                  <div class="blog__item__text">
+                                                      <ul class="blog__item__tags">
+                                                          {% for tag in post.tags.all %}
+                                                          <li>{{ tag.name }}</li>
+                                                          {% endfor %}
+                                                      </ul>
+                                                      {% if user.is_authenticated or post.is_public %}
+                                                      <h5>{% if not post.is_public %}[下書き] {% endif %}<a href="{% url 'posted:post_detail' post.id %}">{{ post.title }}</a></h5>
+                                                      {% endif %}
+                                                      <p>{{ post.content|safe }}</p>
+                                                      <ul class="blog__item__widget">
+                                                          <li>
+                                                              <i class="fa fa-clock-o"></i> 
+                                                              {% for category in post.category.all %}
+                                                                  {{ category.name }} 
+                                                              {% endfor %}
+                                                          </li>
+                                                          <li><i class="fa fa-clock-o"></i> {{ post.published_at|date }}</li>
+                                                          <li><i class="fa fa-user"></i>  {{ post.author }}</li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      {% endfor %}
+                                      </div>
+                                      <div class="blog__pagination">
+                                          {% if page_obj.has_previous %}
+                                          <a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-long-arrow-left"></i> Pre</a>
+                                          {% endif %}
+                                          {% for num in paginator.page_range %}
+                                          {% if page_obj.number == num %}
+                                          <span class="page_now">{{ num }}</span>
+                                          {% else %}
+                                          <a href="?page={{ num }}">{{ num }}</a>
+                                          {% endif %}
+                                          {% endfor %}
+                                          {% if page_obj.has_next %}
+                                          <a href="?page={{ page_obj.next_page_number }}">Next <i class="fa fa-long-arrow-right"></i></a>
+                                          {% endif %}
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      
+                                  </div>
+                              </div>
+                          </div>
+                      </section>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}
+</body>
+
+<div class="breadcrumb-area set-bg" data-setbg="{% static 'img/breadcrumb/breadcrumb-normal.jpg' %}">
+  <div class="container">
+    <div class="row">
+      <div class="card mx-auto" style="width: 40rem;">
+        <img src="{{ user.profile.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">名前: {{ user.username }}</h4>
+          <br>
+          <h4 class="card-text">メール: {{ user.email }}</h4>
+        
+          <a href="{% url 'profile_update' %}" class="btn btn-primary">更新</a>
+          <a href="{% url 'logout' %}" class="btn btn-primary">ログアウト</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
